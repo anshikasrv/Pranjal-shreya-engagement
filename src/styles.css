@@ -1,0 +1,350 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Royal maroon & gold design system for the Ring Ceremony invitation.
+ * All colors use oklch. Brand tokens: maroon, maroon-deep, maroon-light,
+ * gold, gold-light, gold-dark, cream, leaf.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Brand */
+  --color-maroon: var(--maroon);
+  --color-maroon-deep: var(--maroon-deep);
+  --color-maroon-light: var(--maroon-light);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
+  --color-cream: var(--cream);
+  --color-leaf: var(--leaf);
+
+  --font-display: "Cinzel", "Cormorant Garamond", serif;
+  --font-names: "Playfair Display", "Cormorant Garamond", serif;
+  --font-body: "Cormorant Garamond", Georgia, serif;
+  --font-deva: "Noto Serif Devanagari", serif;
+  --font-sans: "Cormorant Garamond", Georgia, serif;
+}
+
+:root {
+  /* Keep our own palette; stop Android/Chrome auto-dark from recolouring cream sections. */
+  color-scheme: only light;
+  --radius: 0.75rem;
+
+  --maroon-deep: oklch(0.231 0.08 11.8);
+  --maroon: oklch(0.315 0.114 14.3);
+  --maroon-light: oklch(0.42 0.147 9);
+  --gold: oklch(0.767 0.139 91.1);
+  --gold-light: oklch(0.897 0.092 92.7);
+  --gold-dark: oklch(0.582 0.105 82);
+  --cream: oklch(0.974 0.03 88.4);
+  --leaf: oklch(0.435 0.077 150);
+
+  --gradient-gold: linear-gradient(
+    110deg,
+    var(--gold-dark) 0%,
+    var(--gold-light) 28%,
+    var(--gold) 50%,
+    var(--gold-light) 72%,
+    var(--gold-dark) 100%
+  );
+  --gradient-maroon: radial-gradient(
+    ellipse at 50% 30%,
+    var(--maroon-light) 0%,
+    var(--maroon) 45%,
+    var(--maroon-deep) 100%
+  );
+  --shadow-gold: 0 0 0 1px color-mix(in oklab, var(--gold) 50%, transparent),
+    0 18px 40px -18px color-mix(in oklab, var(--gold) 55%, transparent);
+  --shadow-gold-lift: 0 0 0 1px var(--gold),
+    0 28px 60px -20px color-mix(in oklab, var(--gold) 70%, transparent);
+  --glow-gold: 0 0 40px color-mix(in oklab, var(--gold) 45%, transparent);
+
+  --background: var(--cream);
+  --foreground: var(--maroon);
+  --card: var(--cream);
+  --card-foreground: var(--maroon);
+  --popover: var(--cream);
+  --popover-foreground: var(--maroon);
+  --primary: var(--maroon);
+  --primary-foreground: var(--cream);
+  --secondary: var(--gold-light);
+  --secondary-foreground: var(--maroon);
+  --muted: oklch(0.94 0.035 88);
+  --muted-foreground: oklch(0.45 0.08 14);
+  --accent: var(--gold-light);
+  --accent-foreground: var(--maroon);
+  --destructive: oklch(0.55 0.2 27);
+  --destructive-foreground: var(--cream);
+  --border: color-mix(in oklab, var(--gold) 55%, transparent);
+  --input: color-mix(in oklab, var(--gold-dark) 50%, transparent);
+  --ring: var(--gold);
+  --chart-1: var(--gold);
+  --chart-2: var(--maroon);
+  --chart-3: var(--gold-dark);
+  --chart-4: var(--maroon-light);
+  --chart-5: var(--leaf);
+  --sidebar: var(--cream);
+  --sidebar-foreground: var(--maroon);
+  --sidebar-primary: var(--maroon);
+  --sidebar-primary-foreground: var(--cream);
+  --sidebar-accent: var(--gold-light);
+  --sidebar-accent-foreground: var(--maroon);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--gold);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    color-scheme: only light;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html::-webkit-scrollbar {
+    display: none;
+  }
+
+  body {
+    background-color: var(--maroon-deep);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--gold);
+    color: var(--maroon-deep);
+  }
+}
+
+/* ---------- Typography helpers ---------- */
+
+@utility font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+@utility text-gold {
+  background-image: var(--gradient-gold);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@utility text-gold-shimmer {
+  background-image: var(--gradient-gold);
+  background-size: 250% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gold-shimmer 6s ease-in-out infinite;
+}
+
+@utility bg-gold {
+  background-image: var(--gradient-gold);
+  background-size: 200% auto;
+}
+
+/* ---------- Section backgrounds ---------- */
+
+@utility bg-royal {
+  background-color: var(--maroon);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23D4AF37' stroke-opacity='0.09' stroke-width='1'%3E%3Cpath d='M28 4 L52 28 L28 52 L4 28 Z'/%3E%3Cpath d='M28 18 L38 28 L28 38 L18 28 Z'/%3E%3C/g%3E%3Ccircle cx='28' cy='28' r='1.4' fill='%23D4AF37' fill-opacity='0.18'/%3E%3C/svg%3E"),
+    var(--gradient-maroon);
+  color: var(--cream);
+}
+
+@utility bg-paper {
+  background-color: var(--cream);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.55 0 0 0 0 0.4 0 0 0 0 0.15 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse at 50% 0%, var(--cream) 0%, color-mix(in oklab, var(--gold-light) 35%, var(--cream)) 100%);
+  color: var(--maroon);
+}
+
+/* Thin gold double-line frame */
+@utility frame-double {
+  position: relative;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    border: 1px solid color-mix(in oklab, var(--gold) 70%, transparent);
+  }
+  &::before {
+    inset: 10px;
+  }
+  &::after {
+    inset: 16px;
+    border-color: color-mix(in oklab, var(--gold) 40%, transparent);
+  }
+}
+
+@utility shadow-gold {
+  box-shadow: var(--shadow-gold);
+}
+
+@utility shadow-gold-lift {
+  box-shadow: var(--shadow-gold-lift);
+}
+
+@utility glow-gold {
+  box-shadow: var(--glow-gold);
+}
+
+@utility arch {
+  border-radius: 999px 999px 0.75rem 0.75rem;
+}
+
+/* ---------- Animations ---------- */
+
+@keyframes gold-shimmer {
+  0%,
+  100% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes sway {
+  0%,
+  100% {
+    transform: rotate(-2.5deg);
+  }
+  50% {
+    transform: rotate(2.5deg);
+  }
+}
+
+@keyframes drift {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(var(--dx, 40px), -110vh, 0) rotate(240deg);
+    opacity: 0;
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.04);
+  }
+}
+
+@utility animate-spin-slow {
+  animation: spin-slow 140s linear infinite;
+}
+
+@utility animate-spin-slower {
+  animation: spin-slow 220s linear infinite reverse;
+}
+
+@utility animate-sway {
+  animation: sway 7s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@utility animate-drift {
+  animation: drift var(--dur, 18s) linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+@utility animate-glow {
+  animation: glow-pulse 6s ease-in-out infinite;
+}
+
+/* Desktop-only custom cursor */
+@media (pointer: fine) {
+  html.has-gold-cursor,
+  html.has-gold-cursor * {
+    cursor: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
