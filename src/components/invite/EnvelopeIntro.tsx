@@ -108,7 +108,7 @@ export function EnvelopeIntro({ onOpen }: { onOpen?: () => void }) {
                   Tap to Open Invitation
                 </Button>
                 <p className="font-body text-base italic text-cream/70">
-                  {EVENT.occasion} · {EVENT.bride} &amp; {EVENT.groom}
+                  {EVENT.occasion} · {EVENT.groom} &amp; {EVENT.bride}
                 </p>
               </motion.div>
             </motion.div>
@@ -132,7 +132,11 @@ function WaxSeal({ broken }: { broken: boolean }) {
       }}
       animate={
         broken
-          ? { x: side === "left" ? -46 : 46, rotate: side === "left" ? -18 : 18, opacity: 0 }
+          ? {
+              x: side === "left" ? -46 : 46,
+              rotate: side === "left" ? -18 : 18,
+              opacity: 0,
+            }
           : { x: 0, rotate: 0, opacity: 1 }
       }
       transition={{ duration: 1.1, ease: EASE }}
@@ -157,7 +161,11 @@ function WaxSeal({ broken }: { broken: boolean }) {
 
 function SealFace() {
   return (
-    <svg viewBox="0 0 200 200" className="size-full drop-shadow-xl" aria-hidden="true">
+    <svg
+      viewBox="0 0 200 200"
+      className="size-full drop-shadow-xl"
+      aria-hidden="true"
+    >
       <defs>
         <radialGradient id="seal" cx="38%" cy="32%" r="75%">
           <stop offset="0%" stopColor="var(--gold-light)" />
@@ -169,8 +177,23 @@ function SealFace() {
         d="M100 6 C 122 4, 132 18, 150 22 C 170 28, 186 40, 188 64 C 192 84, 198 98, 192 118 C 188 140, 176 160, 156 172 C 138 186, 122 196, 100 194 C 78 196, 60 186, 44 174 C 24 162, 10 142, 8 118 C 2 98, 8 80, 12 62 C 18 40, 34 26, 52 20 C 70 14, 80 6, 100 6 Z"
         fill="url(#seal)"
       />
-      <circle cx="100" cy="100" r="70" fill="none" stroke="var(--gold-dark)" strokeWidth="2" />
-      <circle cx="100" cy="100" r="62" fill="none" stroke="var(--gold-light)" strokeWidth="0.8" strokeDasharray="2 4" />
+      <circle
+        cx="100"
+        cy="100"
+        r="70"
+        fill="none"
+        stroke="var(--gold-dark)"
+        strokeWidth="2"
+      />
+      <circle
+        cx="100"
+        cy="100"
+        r="62"
+        fill="none"
+        stroke="var(--gold-light)"
+        strokeWidth="0.8"
+        strokeDasharray="2 4"
+      />
       <text
         x="100"
         y="112"
