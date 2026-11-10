@@ -3,7 +3,12 @@ import { MotionConfig } from "framer-motion";
 import { useState } from "react";
 
 import { SITE } from "@/config/event";
-import { GoldCursor, MusicToggle, Navbar, ScrollProgress } from "@/components/invite/Chrome";
+import {
+  GoldCursor,
+  MusicToggle,
+  Navbar,
+  ScrollProgress,
+} from "@/components/invite/Chrome";
 import { Contact } from "@/components/invite/Contact";
 import { Countdown } from "@/components/invite/Countdown";
 import { Details } from "@/components/invite/Details";
@@ -49,13 +54,15 @@ function Index() {
         <Hero ready={opened} />
         <Invitation />
         <Countdown />
-        <Details />
+
         <Venue />
         <Contact />
       </main>
       <Footer />
-      <MusicToggle />
+
       <GoldCursor />
     </MotionConfig>
   );
 }
+//<MusicToggle />
+//<Details />

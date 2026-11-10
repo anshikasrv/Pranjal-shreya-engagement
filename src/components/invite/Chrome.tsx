@@ -10,8 +10,17 @@ import { cn } from "@/lib/utils";
 
 export function ScrollProgress() {
   const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 30, mass: 0.3 });
-  return <motion.div className="bg-gold fixed inset-x-0 top-0 z-[55] h-[2px] origin-left" style={{ scaleX }} />;
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 120,
+    damping: 30,
+    mass: 0.3,
+  });
+  return (
+    <motion.div
+      className="bg-gold fixed inset-x-0 top-0 z-[55] h-[2px] origin-left"
+      style={{ scaleX }}
+    />
+  );
 }
 
 /* ---------------- Sticky navbar ---------------- */
@@ -26,7 +35,8 @@ const LINKS = [
 export function Navbar() {
   const [visible, setVisible] = useState(false);
   useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY > window.innerHeight * 0.85);
+    const onScroll = () =>
+      setVisible(window.scrollY > window.innerHeight * 0.85);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -44,7 +54,10 @@ export function Navbar() {
           aria-label="Sections"
         >
           <div className="mx-auto flex h-12 max-w-5xl items-center justify-center gap-1 px-2 sm:h-14 sm:justify-between sm:px-6">
-            <a href="#top" className="font-names text-gold hidden text-lg italic sm:block">
+            <a
+              href="#top"
+              className="font-names text-gold hidden text-lg italic sm:block"
+            >
               {EVENT.bride} &amp; {EVENT.groom}
             </a>
             <ul className="flex items-center gap-0.5 sm:gap-2">
@@ -69,48 +82,48 @@ export function Navbar() {
 
 /* ---------------- Background music ---------------- */
 
-export function MusicToggle() {
-  const audioRef = useRef<HTMLAudioElement>(null);
-  const [playing, setPlaying] = useState(false);
+// export function MusicToggle() {
+//   const audioRef = useRef<HTMLAudioElement>(null);
+//   const [playing, setPlaying] = useState(false);
 
-  const toggle = async () => {
-    const a = audioRef.current;
-    if (!a) return;
-    if (playing) {
-      a.pause();
-      setPlaying(false);
-      return;
-    }
-    try {
-      a.volume = 0.5;
-      await a.play();
-      setPlaying(true);
-    } catch {
-      setPlaying(false);
-      toast("Music will play once a track is added.");
-    }
-  };
+//   const toggle = async () => {
+//     const a = audioRef.current;
+//     if (!a) return;
+//     if (playing) {
+//       a.pause();
+//       setPlaying(false);
+//       return;
+//     }
+//     try {
+//       a.volume = 0.5;
+//       await a.play();
+//       setPlaying(true);
+//     } catch {
+//       setPlaying(false);
+//       toast("Music will play once a track is added.");
+//     }
+//   };
 
-  return (
-    <>
-      {/* MUSIC SLOT — set MUSIC_SRC in src/config/event.ts */}
-      <audio ref={audioRef} src={MUSIC_SRC} loop preload="none" onEnded={() => setPlaying(false)} />
-      <button
-        type="button"
-        onClick={toggle}
-        aria-label={playing ? "Pause music" : "Play music"}
-        aria-pressed={playing}
-        className={cn(
-          "bg-gold fixed bottom-5 right-5 z-50 flex size-12 items-center justify-center rounded-full text-maroon-deep shadow-gold transition-transform duration-500 hover:scale-105",
-          playing && "glow-gold",
-        )}
-      >
-        {playing && <span className="absolute inset-0 animate-ping rounded-full border border-gold/60" />}
-        {playing ? <Music className="size-5" /> : <VolumeX className="size-5" />}
-      </button>
-    </>
-  );
-}
+//   return (
+//     <>
+//       {/* MUSIC SLOT — set MUSIC_SRC in src/config/event.ts */}
+//       <audio ref={audioRef} src={MUSIC_SRC} loop preload="none" onEnded={() => setPlaying(false)} />
+//       <button
+//         type="button"
+//         onClick={toggle}
+//         aria-label={playing ? "Pause music" : "Play music"}
+//         aria-pressed={playing}
+//         className={cn(
+//           "bg-gold fixed bottom-5 right-5 z-50 flex size-12 items-center justify-center rounded-full text-maroon-deep shadow-gold transition-transform duration-500 hover:scale-105",
+//           playing && "glow-gold",
+//         )}
+//       >
+//         {playing && <span className="absolute inset-0 animate-ping rounded-full border border-gold/60" />}
+//         {playing ? <Music className="size-5" /> : <VolumeX className="size-5" />}
+//       </button>
+//     </>
+//   );
+// }
 
 /* ---------------- Gold diamond cursor (desktop only) ---------------- */
 
@@ -120,7 +133,9 @@ export function GoldCursor() {
 
   useEffect(() => {
     const fine = window.matchMedia("(pointer: fine)").matches;
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const reduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
     if (!fine || reduced) return;
     setEnabled(true);
     document.documentElement.classList.add("has-gold-cursor");
@@ -131,7 +146,9 @@ export function GoldCursor() {
       raf = requestAnimationFrame(() => {
         const el = ref.current;
         if (!el) return;
-        const interactive = (e.target as HTMLElement | null)?.closest("a,button,input,textarea,label,select,[role=button]");
+        const interactive = (e.target as HTMLElement | null)?.closest(
+          "a,button,input,textarea,label,select,[role=button]",
+        );
         el.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) rotate(45deg) scale(${interactive ? 1.7 : 1})`;
         el.style.opacity = "1";
       });

@@ -12,10 +12,10 @@ export const EVENT = {
   occasion: "Ring Ceremony",
   bride: "Shreya",
   groom: "Pranjal",
-  initials: "S & P",
+  initials: "P & S",
 
   shloka: "॥ श्री गणेशाय नमः ॥",
-  blessingLine: "With Divine Blessings",
+  blessingLine: "With Divine Blessings of the Almighty",
 
   dateLabel: "Friday, 27th November 2026",
   weekday: "Friday",
@@ -47,23 +47,23 @@ export const EVENT = {
     "With immense pleasure and happiness,",
     "we cordially invite you to grace",
     "the auspicious occasion of the",
-    "Ring Ceremony of Shreya & Pranjal.",
+    "Ring Ceremony of Pranjal & Shreya.",
   ],
   closingLine:
     "Your gracious presence and blessings will add warmth and joy to this special occasion.",
 
   blessingsFrom: ["Surbhi", "Avaneendra"],
-  regards: "Madhurlata Srivastava",
+  regards: "Balendu Srivastava",
 
-  contacts: ["9415388273", "9454013975"],
+  contacts: ["9035215767", "9035215767"],
   whatsappMessage:
-    "Hello, I would like to know more about the Ring Ceremony of Shreya & Pranjal.",
+    "Hello, I would like to know more about the Ring Ceremony of Pranjal & Shreya.",
 } as const;
 
 export const SITE = {
-  title: "Shreya & Pranjal – Ring Ceremony Invitation",
+  title: "Pranjal & Shreya – Ring Ceremony Invitation",
   description:
-    "You are cordially invited to the Ring Ceremony of Shreya & Pranjal on 27th November 2026, Prayagraj",
+    "You are cordially invited to the Ring Ceremony of Pranjal & Shreya on 27th November 2026, Prayagraj",
   /**
    * PREVIEW IMAGE SLOT for WhatsApp / social shares.
    * Paste a full https:// URL to a 1200×630 image here (after publishing,
