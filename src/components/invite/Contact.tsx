@@ -28,7 +28,7 @@ export function Contact() {
           </p>
         </Reveal>
         <Reveal delay={0.15} className="mt-6 flex flex-col items-center">
-          <p className="font-names text-gold-shimmer text-2xl italic leading-tight sm:text-3xl">
+          <p className="font-names text-gold-shimmer text-lg italic leading-tight sm:text-3xl">
             Preksha Srivastava
           </p>
         </Reveal>
