@@ -37,7 +37,7 @@ export function Contact() {
 
         <Reveal delay={0.1}>
           <p className="font-display text-xs text-gold-light/80">Regards</p>
-          <p className="font-body mt-3 text-4xl text-cream sm:text-5xl">
+          <p className="font-body mt-3 text-3xl text-cream sm:text-4xl">
             {EVENT.regards}
           </p>
         </Reveal>
