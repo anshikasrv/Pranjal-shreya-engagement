@@ -53,9 +53,9 @@ export const EVENT = {
     "Your gracious presence and blessings will add warmth and joy to this special occasion.",
 
   blessingsFrom: ["Surbhi", "Avaneendra"],
-  regards: "Balendu Srivastava",
+  regards: "Balendu Bhushan Srivastava",
 
-  contacts: ["9035215767", "9035215767"],
+  contacts: [" 7905125152", "9035215767"],
   whatsappMessage:
     "Hello, I would like to know more about the Ring Ceremony of Pranjal & Shreya.",
 } as const;

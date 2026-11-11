@@ -24,12 +24,12 @@ export function Contact() {
       <div className="relative mx-auto flex max-w-2xl flex-col items-center text-center">
         <Reveal>
           <p className="font-display text-xs text-gold-light/90">
-            With Love &amp; Best Wishes From
+            With Love From
           </p>
         </Reveal>
         <Reveal delay={0.15} className="mt-6 flex flex-col items-center">
-          <p className="font-names text-gold-shimmer text-5xl italic leading-tight sm:text-6xl">
-            Preksha
+          <p className="font-names text-gold-shimmer text-3xl italic leading-tight sm:text-4xl">
+            Preksha Srivastava
           </p>
         </Reveal>
 
@@ -37,7 +37,7 @@ export function Contact() {
 
         <Reveal delay={0.1}>
           <p className="font-display text-xs text-gold-light/80">Regards</p>
-          <p className="font-body mt-3 text-3xl text-cream sm:text-4xl">
+          <p className="font-body mt-3 text-4xl text-cream sm:text-5xl">
             {EVENT.regards}
           </p>
         </Reveal>
