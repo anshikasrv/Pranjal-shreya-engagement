@@ -57,7 +57,7 @@ export const EVENT = {
 
   contacts: [" 7905125152", "9035215767"],
   whatsappMessage:
-    "Hello, I would like to know more about the Ring Ceremony of Pranjal & Shreya.",
+    "Hello! I wanted to know a little more about the engagement...",
 } as const;
 
 export const SITE = {
