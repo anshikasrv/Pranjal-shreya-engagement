@@ -17,16 +17,16 @@ export const EVENT = {
   shloka: "॥ श्री गणेशाय नमः ॥",
   blessingLine: "With Divine Blessings of the Almighty",
 
-  dateLabel: "Friday, 27th November 2026",
-  weekday: "Friday",
-  day: "27",
-  monthYear: "November 2026",
-  shortDate: "27.11.2026",
+  dateLabel: "Thursday, 10th December 2026",
+  weekday: "Thursday",
+  day: "10",
+  monthYear: "December 2026",
+  shortDate: "10.12.2026",
   timeLabel: "4:00 PM onwards",
   city: "Prayagraj",
 
   /** Start of the ceremony in India Standard Time (Asia/Kolkata, UTC+5:30). */
-  startISO: "2026-11-27T16:00:00+05:30",
+  startISO: "2026-12-10T16:00:00+05:30",
   /**
    * Calendar apps need an end time; the invitation says "4:00 PM onwards",
    * so this is only used for the calendar entry length.
@@ -63,7 +63,7 @@ export const EVENT = {
 export const SITE = {
   title: "Pranjal & Shreya – Ring Ceremony Invitation",
   description:
-    "You are cordially invited to the Ring Ceremony of Pranjal & Shreya on 27th November 2026, Prayagraj",
+    "You are cordially invited to the Ring Ceremony of Pranjal & Shreya on 10th December 2026, Prayagraj",
   /**
    * PREVIEW IMAGE SLOT for WhatsApp / social shares.
    * Paste a full https:// URL to a 1200×630 image here (after publishing,
